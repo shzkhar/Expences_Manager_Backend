@@ -12,21 +12,25 @@ public class SubCategoryEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer subsategoryid;
-	private String subsategory;
+	private Integer subcategoryid;
+	private String subcategoryname;
 	
-	public Integer getSubsategoryid() {
-		return subsategoryid;
+	
+	public Integer getSubcategoryid() {
+		return subcategoryid;
 	}
-	public void setSubsategoryid(Integer subsategoryid) {
-		this.subsategoryid = subsategoryid;
+	public void setSubcategoryid(Integer subcategoryid) {
+		this.subcategoryid = subcategoryid;
 	}
-	public String getSubsategory() {
-		return subsategory;
+	public String getSubcategoryname() {
+		return subcategoryname;
 	}
-	public void setSubsategory(String subsategory) {
-		this.subsategory = subsategory;
+	public void setSubcategoryname(String subcategoryname) {
+		this.subcategoryname = subcategoryname;
 	}
+	
+	
+	
 	
 	
 }
