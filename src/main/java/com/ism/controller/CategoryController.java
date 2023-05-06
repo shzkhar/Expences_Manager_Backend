@@ -49,7 +49,7 @@ public class CategoryController {
 		List<CategoryEntity> category = catagoryRepository.findAll();
 		CustomResponse<List<CategoryEntity>> resp = new CustomResponse<>();
 		resp.setData(category);
-		resp.setMsg("all Category feched");
+		resp.setMsg("All Category Feched");
 
 		return ResponseEntity.ok(resp);
 	}
@@ -63,7 +63,7 @@ public class CategoryController {
     	CustomResponse<CategoryEntity> resp = new CustomResponse<>();
     	
     	resp.setData(categoryEntity);
-    	resp.setMsg("Category Deleted");
+    	resp.setMsg("Category Deleted Successfully");
     	return ResponseEntity.ok(resp);
     	
     }

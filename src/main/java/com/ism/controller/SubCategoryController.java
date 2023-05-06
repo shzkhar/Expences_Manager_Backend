@@ -64,7 +64,7 @@ public class SubCategoryController {
 	    	CustomResponse<SubCategoryEntity> resp = new CustomResponse<>();
 	    	
 	    	resp.setData(categoryEntity);
-	    	resp.setMsg("Category Deleted");
+	    	resp.setMsg("SubCategory Deleted Successfully");
 	    	return ResponseEntity.ok(resp);    
 	    	
 	    }
