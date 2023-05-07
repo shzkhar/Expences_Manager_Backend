@@ -1,9 +1,14 @@
 package com.ism.controller;
 
+import java.util.List;
+
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -76,28 +81,6 @@ public class SessionController {
 		}
 	}
 
-//	@GetMapping("/forgotpasword/{email}")
-//	public ResponseEntity<CustomResponse<UserEntity>> forgotpaswordd(@PathVariable("email") String email)
-//	{
-//		UserEntity userEntity = userRepository.findByEmail(email);
-//		CustomResponse<UserEntity> resp = new CustomResponse<>();
-//		
-//		if(userEntity == null)
-//		{
-//			resp.setMsg("Email Does Not Exist");
-//			return ResponseEntity.unprocessableEntity().body(resp);
-//		}
-//		else
-//		{
-//			Integer otp = (int) Math.random()*100000;
-//			userEntity.setOtp(otp);
-//			userRepository.save(userEntity);
-//			
-//			resp.setData(userEntity);
-//			resp.setMsg("OTP Share On Your Mail");
-//			return ResponseEntity.ok(resp);
-//		}
-//	}
 	
 	@GetMapping("/forgotPassword")
 	public ResponseEntity<CustomResponse<UserEntity>> forgotPasseord(@RequestParam("email") String email){
@@ -146,6 +129,28 @@ public class SessionController {
 			}
 		}
 
+	@GetMapping("getAllUsers")
+	public ResponseEntity<CustomResponse<List<UserEntity>>> getAllUserss()
+	{
+		List<UserEntity> userEntity = userRepository.findAll();
+		
+		CustomResponse<List<UserEntity>> resp = new CustomResponse<>();
+		
+		resp.setData(userEntity);
+		resp.setMsg("All User Fetch");
+		return ResponseEntity.ok(resp);
+	}
+	
+	@DeleteMapping("/deleteUserById")
+	public ResponseEntity<CustomResponse<UserEntity>> deleteByIdd(@PathVariable("id") Integer id)
+	{
+		//UserEntity userEntity = userRepository.findByUserid(id);
+		//userRepository.deleteByUserid(id);
+		
+		CustomResponse<UserEntity> resp = new CustomResponse<>();
+		resp.setMsg("User Deleted Successfully");
+		return ResponseEntity.ok(resp);
+	}
 }
 
 

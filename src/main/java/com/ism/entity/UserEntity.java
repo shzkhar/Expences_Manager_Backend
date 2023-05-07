@@ -21,6 +21,14 @@ public class UserEntity {
      private Integer otp;
      private String token;
      
+     
+     
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
 	public String getFirstname() {
 		return firstname;
 	}
